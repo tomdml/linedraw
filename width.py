@@ -4,7 +4,7 @@ from PIL import Image
 from itertools import cycle
 
 
-def draw_image(filepath, out_rows=50, out_points=1000, color=['black'], bgcolor='white', contrast='3'):
+def draw_image(filepath, out_rows=50, out_points=1000, color=['black'], bgcolor='white', contrast=3):
     """
     Create the point drawing.
     Args:
@@ -28,7 +28,7 @@ def draw_image(filepath, out_rows=50, out_points=1000, color=['black'], bgcolor=
     im = 1 - (np.asarray(im) / 255)
 
     # Increase contrast by squashing black pixels and increasing white ones
-    im = im**int(contrast)
+    im = im**contrast
 
     # Emulate a line drawing with many plt.scatter points
     x = np.linspace(0, out_points, out_points)
